@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Type to Unlock</title>
+  <style>
+    body {
+      background: #1e1e1e;
+      color: #f0e6e6;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #ff9999;
+    }
+
+    .prompt {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    input {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-family: inherit;
+      font-size: 18px;
+      width: 200px;
+      text-align: center;
+      background: #333;
+      color: #fff;
+    }
+
+    .message {
+      display: none;
+      background-color: #2a2a2a;
+      border: 1px solid #ff9999;
+      padding: 30px;
+      max-width: 600px;
+      border-radius: 8px;
+      margin-top: 30px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .message p {
+      color: #f2f2f2;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Unlock the Message</h1>
+  <p class="prompt">Type the Nickname that was named by pournami</p>
+  <input type="text" id="inputBox" placeholder="Type here..." oninput="checkInput()" />
+
+  <div class="message" id="apologyMessage">
+    <h2>I'm Sorry</h2>
+    <p>I’ve been thinking a lot about what happened, and I realize that I made a mistake.</p>
+    <p>I let my actions or words hurt you, and I deeply regret it.</p>
+    <p>I know saying "sorry" isn't enough, but please know that I am truly sorry for <strong>{mistake}</strong>.</p>
+    <p>You mean so much to me, and I never want to make you feel anything less than loved and appreciated.</p>
+    <p>I’ll do better, I promise. I want to make things right, and I’m here to listen and understand how I can be better for you.</p>
+    <p>You deserve all the happiness in the world, and I hope we can work through this together.</p>
+    <p>With love and sincerity,</p>
+  </div>
+
+  <script>
+    function checkInput() {
+      const input = document.getElementById('inputBox').value.toLowerCase();
+      if (input === 'amavasa') {
+        document.getElementById('apologyMessage').style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>
